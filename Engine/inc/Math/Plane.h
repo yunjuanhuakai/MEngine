@@ -4,6 +4,7 @@
 
 namespace mk::math {
 
+  // Ax + By + Cz + D = 0
   struct Plane {
     float a, b, c, d;
 
@@ -13,6 +14,6 @@ namespace mk::math {
 
     bool Inside(vec3 const& ponit, float radius = 0.0f) const;
 
+    float Distance(vec3 const &point) const;
   };
-
 }

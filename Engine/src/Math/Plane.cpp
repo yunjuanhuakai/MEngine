@@ -14,8 +14,12 @@ namespace mk::math {
   }
 
   bool Plane::Inside(vec3 const& ponit, float radius) const {
-    auto result = dot(vec3(a, b, c), ponit) + this->d;
-    return result >= radius;
+    auto distance = this->Distance(ponit);
+    return distance >= -radius; 
+  }
+
+  float Plane::Distance(vec3 const & point) const {
+    return dot(vec3(a, b, c), point) + this->d;
   }
 
 }

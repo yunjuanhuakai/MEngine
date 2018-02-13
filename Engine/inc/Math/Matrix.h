@@ -2,11 +2,16 @@
 
 #include "Base/Base.h"
 
-namespace mk::math {
 #ifdef USE_GLM
-#include <glm/matrix.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtc/random.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/string_cast.hpp>
+#endif // USE_GLM
+
+namespace mk::math {
+#ifdef USE_GLM
   using glm::vec2;
   using glm::vec3;
   using glm::vec4;
@@ -26,6 +31,11 @@ namespace mk::math {
   using glm::inverse;
   using glm::dot;
   using glm::cross;
+  using glm::distance;
+
+  using glm::ballRand;
+
+  using glm::to_string;
 #endif
   namespace global {
     inline vec3 Right{ 1, 0, 0 };

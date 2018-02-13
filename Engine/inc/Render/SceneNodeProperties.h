@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "Base/Base.h"
 #include "Math/Matrix.h"
@@ -24,6 +24,7 @@ namespace mk :: render {
     std::string Name;
     math::mat4 ToWorld;
     math::mat4 FromWorld;
+    /// TODO 一个SceneNode被简单的描述为一个包围球，这个是后面要做的事情
     float Radius;
     RenderPass Pass;
     Material _Material;

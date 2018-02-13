@@ -7,7 +7,7 @@ namespace mk::render {
     inline Color White{ 1, 1, 1, 1 };
     inline Color Black{ 0, 0, 0, 1 };
     inline Color Cyan{ 0, 1, 1, 1 };
-    inline Color Red{ 1, 0,0, 1 };
+    inline Color Red{ 1, 0, 0, 1 };
     inline Color Green{ 0, 1, 0, 1 };
     inline Color Blue{ 0, 0, 1, 1 };
     inline Color Yellow{ 1, 1, 0, 1 };
@@ -25,7 +25,7 @@ namespace mk::render {
     Color Emissive;
     float Power;
   public:
-    Material():
+    Material() :
       Diffuse(global::White),
       Ambient(Color(0.1, 0.1, 0.1, 1)),
       Specular(global::White),

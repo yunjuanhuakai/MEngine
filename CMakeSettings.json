@@ -26,15 +26,11 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "F:\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+          "value": "C:\\Users\\yunka\\Downloads\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
         },
         {
           "name": "CMAKE_CXX_STANDARD",
           "value": "17"
-        },
-        {
-          "name": "CMAKE_INCLUDE_PATH",
-          "value": "F:\\vcpkg\\installed\\x86-windows\\include"
         }
       ]
     },
@@ -63,7 +59,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "F:\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+          "value": "C:\\Users\\yunka\\Downloads\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
         },
         {
           "name": "CMAKE_CXX_STANDARD",
@@ -76,7 +72,7 @@
       "generator": "Ninja",
       "configurationType": "Debug",
       "inheritEnvironments": [ "msvc_x64" ],
-      "buildRoot": "${projectDir}\\build\\Release_x64",
+      "buildRoot": "${projectDir}\\build\\Debug_x64",
       "installRoot": "${env.ProgramFiles}\\${name}",
       "cmakeCommandArgs": "",
       "buildCommandArgs": "",
@@ -96,7 +92,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "F:\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+          "value": "C:\\Users\\yunka\\Downloads\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
         },
         {
           "name": "CMAKE_CXX_STANDARD",
@@ -129,7 +125,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "F:\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+          "value": "C:\\Users\\yunka\\Downloads\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
         },
         {
           "name": "CMAKE_CXX_STANDARD",
