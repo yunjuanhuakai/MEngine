@@ -7,14 +7,13 @@
 #include <type_traits>
 
 namespace mk {
-  template <typename T>
-  using arc = std::shared_ptr<T>;
+  using std::shared_ptr;
 
-  template <typename T>
-  using box = std::unique_ptr<T>;
+  using std::unique_ptr;
 
-  template <typename T>
-  using weak = std::weak_ptr<T>;
+  using std::weak_ptr;
+
+  using std::enable_shared_from_this;
 
   constexpr double PI = 3.14159265358979323846;
 

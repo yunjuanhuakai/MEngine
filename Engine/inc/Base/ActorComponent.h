@@ -14,7 +14,7 @@ namespace mk {
 
     virtual size_t GetId() const = 0;
   protected:
-    arc<Actor> Owner;
+    shared_ptr<Actor> Owner;
   };
 
 }

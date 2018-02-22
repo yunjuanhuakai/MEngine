@@ -8,7 +8,7 @@ namespace mk {
   class IActorComponent;
 
   class Actor {
-    using ActorComponents = std::vector<arc<IActorComponent>>;
+    using ActorComponents = std::vector<shared_ptr<IActorComponent>>;
 
     size_t _ActorId;
     ActorComponents _ActorComponents;
@@ -25,7 +25,7 @@ namespace mk {
     inline size_t ActorId() const { return this->_ActorId; }
 
     template <typename ComponentType>
-    weak<ComponentType> GetComponent(size_t ComponentId) const {
+    weak_ptr<ComponentType> GetComponent(size_t ComponentId) const {
       if (ComponentId >= this->_ActorComponents.size()) {
         return weak<ComponentType>();
       }

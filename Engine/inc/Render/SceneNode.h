@@ -41,10 +41,14 @@ namespace mk::render {
 
     virtual void Render(SceneRef scene) override;
 
+    virtual void PostRender(SceneRef scene) override;
+
     virtual void RenderChildren(SceneRef scene) override;
 
     virtual bool AddChild(SelfPtr child) override;
 
     virtual bool RemoveChild(size_t ActorId) override;
+
+    virtual void Transform(math::mat4 *toWorld, math::mat4 *fromWorld) const override;
   };
 }

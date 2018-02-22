@@ -36,6 +36,11 @@ namespace mk::math {
   using glm::ballRand;
 
   using glm::to_string;
+  using glm::length;
+
+  inline vec4 position(mat4 const& m) {
+    return vec4(m[0][3], m[1][3], m[2][3], 1);
+  }
 #endif
   namespace global {
     inline vec3 Right{ 1, 0, 0 };
