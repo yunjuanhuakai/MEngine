@@ -27,12 +27,12 @@ namespace mk {
     template <typename ComponentType>
     weak_ptr<ComponentType> GetComponent(size_t ComponentId) const {
       if (ComponentId >= this->_ActorComponents.size()) {
-        return weak<ComponentType>();
+        return weak_ptr<ComponentType>();
       }
 
       auto sub = std::static_pointer_cast<ComponentType>(
         this->_ActorComponents[ComponentId]);
-      return weak<ComponentType>(sub);
+      return weak_ptr<ComponentType>(sub);
     }
   };
 

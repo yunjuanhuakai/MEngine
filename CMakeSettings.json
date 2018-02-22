@@ -26,7 +26,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "C:\\Users\\yunka\\Downloads\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+          "value": "F:\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
         },
         {
           "name": "CMAKE_CXX_STANDARD",
@@ -59,7 +59,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "C:\\Users\\yunka\\Downloads\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+          "value": "F:\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
         },
         {
           "name": "CMAKE_CXX_STANDARD",
@@ -92,7 +92,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "C:\\Users\\yunka\\Downloads\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+          "value": "F:\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
         },
         {
           "name": "CMAKE_CXX_STANDARD",
@@ -125,7 +125,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "C:\\Users\\yunka\\Downloads\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+          "value": "F:\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
         },
         {
           "name": "CMAKE_CXX_STANDARD",
