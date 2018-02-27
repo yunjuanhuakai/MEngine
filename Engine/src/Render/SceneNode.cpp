@@ -1,4 +1,5 @@
 ﻿#include "Render/SceneNode.h"
+#include "Render/Scene.h"
 
 namespace mk::render {
   SceneNodePropertiesPtr const& SceneNode::Get() const {
@@ -79,5 +80,15 @@ namespace mk::render {
 
   void SceneNode::Transform(math::mat4 *toWorld, math::mat4 *fromWorld) const {
     *toWorld = this->Get()->ToWorld;
+  }
+
+  bool SceneNode::Intall(SceneRef scene) {
+    // TODO 
+    return false;
+  }
+
+  bool SceneNode::Uninstall(SceneRef scene) {
+    // TODO 
+    return false;
   }
 }

@@ -14,13 +14,15 @@ namespace mk::render {
 
   class Scene {
   protected:
-    using SceneActorMap = std::map<size_t, ISceneNode>;
+    friend class ISceneNode;
 
-    shared_ptr<ISceneNode> Root;
+    using SceneActorMap = std::map<size_t, shared_ptr<ISceneNode>>;
+
+    unique_ptr<ISceneNode> Root;
     shared_ptr<CameraNode> Camera;
     std::stack<math::mat4> MatrixStack;
     SceneActorMap ActorMap;
-    // LightMangaer 
+    unique_ptr<LightManager> LightManagerPtr;
     
   public:
     Scene();
@@ -32,8 +34,22 @@ namespace mk::render {
     void OnLostDevice();
     void OnUpdate();
 
-    bool Add(size_t ActorId, shared_ptr<ISceneNode> node);
+    bool Add(shared_ptr<ISceneNode> node);
     bool Remove(size_t ActorId);
+
+    void PushMatrix(math::mat4 const& m);
+    void PopMatrix();
+
+    std::optional<math::mat4> GetToWorld() const;
+
+    LightManager& GetLightManager();
+
+    shared_ptr<CameraNode> const GetCamera() const;
+    void SetCamera(shared_ptr<CameraNode> Camera);
+
+  private:
+
+    shared_ptr<ISceneNode> FindByActorId(size_t ActorId);
   };
 
 }

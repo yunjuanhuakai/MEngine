@@ -40,6 +40,12 @@ namespace mk::render {
     virtual bool AddChild(SelfPtr child) = 0;
 
     virtual bool RemoveChild(size_t ActorId) = 0;
+
+    // 将该节点注册到对应场景图
+    virtual bool Intall(SceneRef scene) = 0;
+
+    // 将该节点从对应场景图删除
+    virtual bool Uninstall(SceneRef scene) = 0;
   };
 
 }

@@ -50,5 +50,9 @@ namespace mk::render {
     virtual bool RemoveChild(size_t ActorId) override;
 
     virtual void Transform(math::mat4 *toWorld, math::mat4 *fromWorld) const override;
+
+    virtual bool Intall(SceneRef scene) override;
+
+    virtual bool Uninstall(SceneRef scene) override;
   };
 }
