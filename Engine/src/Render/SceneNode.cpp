@@ -27,7 +27,7 @@ namespace mk::render {
     }
   }
 
-  void SceneNode::PreRender(SceneRef scene) {
+  bool SceneNode::PreRender(SceneRef scene) {
     // TODO scene.PushAndSetMatrix(this->Props->ToWorld);
   }
 

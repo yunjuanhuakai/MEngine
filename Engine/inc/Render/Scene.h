@@ -12,6 +12,12 @@ namespace mk::render {
   class LightNode;
   class LightManager;
 
+  class MatrixStack {
+  private:
+    std::stack<math::mat4> Stack;
+  public:
+  };
+
   class Scene {
   protected:
     friend class ISceneNode;
@@ -29,7 +35,7 @@ namespace mk::render {
 
     virtual ~Scene() {}
 
-    void OnReader();
+    void OnRender();
     void OnRestore();
     void OnLostDevice();
     void OnUpdate();
@@ -43,6 +49,7 @@ namespace mk::render {
     std::optional<math::mat4> GetToWorld() const;
 
     LightManager& GetLightManager();
+    ISceneNode& GetRoot();
 
     shared_ptr<CameraNode> const GetCamera() const;
     void SetCamera(shared_ptr<CameraNode> Camera);

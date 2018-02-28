@@ -1,6 +1,6 @@
 #pragma once
 
-namespace mk::rander {
+namespace mk::render {
   class Scene;
 
   class LightManager {

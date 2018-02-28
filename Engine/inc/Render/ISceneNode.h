@@ -27,7 +27,7 @@ namespace mk::render {
 
     virtual void OnRestore(SceneRef scene) = 0;
 
-    virtual void PreRender(SceneRef scene) = 0;
+    virtual bool PreRender(SceneRef scene) = 0;
 
     virtual bool IsVisible(SceneRef scene) = 0;
 
