@@ -2,7 +2,7 @@
 
 namespace mk::math {
 
-  void Plane::Init(vec3 const& p0, vec3 const& p1, vec3 const& p2) {
+  void Plane::Init(vec3 const &p0, vec3 const &p1, vec3 const &p2) {
     auto e2 = normalize(p2 - p0);
     auto e1 = normalize(p1 - p0);
 
@@ -13,12 +13,12 @@ namespace mk::math {
     this->d = -dot(normal, p0);
   }
 
-  bool Plane::Inside(vec3 const& ponit, float radius) const {
+  bool Plane::Inside(vec3 const &ponit, float radius) const {
     auto distance = this->Distance(ponit);
-    return distance >= -radius; 
+    return distance >= -radius;
   }
 
-  float Plane::Distance(vec3 const & point) const {
+  float Plane::Distance(vec3 const &point) const {
     return dot(vec3(a, b, c), point) + this->d;
   }
 

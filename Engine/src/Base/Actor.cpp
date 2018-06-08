@@ -1,3 +1,18 @@
 #include "Base/Actor.h"
 
-mk::Actor::~Actor() {}
+namespace mk {
+  Actor::~Actor() {}
+
+  void Actor::PostInit() {
+
+  }
+
+  void Actor::Destory() {
+
+  }
+
+  void Actor::Update() {
+
+  }
+
+}
