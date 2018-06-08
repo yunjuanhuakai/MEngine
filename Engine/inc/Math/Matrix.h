@@ -3,6 +3,7 @@
 #include "Base/Base.h"
 
 #ifdef USE_GLM
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
 #include <glm/gtc/random.hpp>
 #include <glm/gtc/quaternion.hpp>

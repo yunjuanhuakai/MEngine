@@ -29,6 +29,7 @@ namespace mk::render {
 
   bool SceneNode::PreRender(SceneRef scene) {
     // TODO scene.PushAndSetMatrix(this->Props->ToWorld);
+    return false;
   }
 
   // 包围球的可见性即是否在摄像机的视锥之内

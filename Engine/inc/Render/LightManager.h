@@ -1,7 +1,7 @@
 #pragma once
+#include "Base/Base.h"
 
 namespace mk::render {
-  class Scene;
 
   class LightManager {
   public:

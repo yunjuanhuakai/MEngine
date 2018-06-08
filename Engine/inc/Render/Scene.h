@@ -33,7 +33,7 @@ namespace mk::render {
   public:
     Scene();
 
-    virtual ~Scene() {}
+    virtual ~Scene();
 
     void OnRender();
     void OnRestore();

@@ -1,14 +1,16 @@
-#include "Render/Scene.h"
 #include "Render/ISceneNode.h"
 #include "Render/RootNode.h"
 #include "Render/LightManager.h"
+#include "Render/Scene.h"
 
 namespace mk::render {
 
   Scene::Scene() 
     : Root(new RootNode)
-    , LightManagerPtr(new LightManager)
+    // , LightManagerPtr(new LightManager)
   {}
+
+  Scene::~Scene() {}
 
   void Scene::OnRender() {
     if (this->Camera) {
