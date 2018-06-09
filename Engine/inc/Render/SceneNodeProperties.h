@@ -5,12 +5,12 @@
 #include "Material.h"
 #include <string>
 
-namespace mk :: render {
+namespace mk ::render {
   class SceneNode;
 
-  enum class RenderPass {
+  enum class RenderPass : int {
     Define,
-    Static = Define, 
+    Static = static_cast<int>(Define),
     Actor,
     Sky,
     NotRendered,
@@ -19,6 +19,7 @@ namespace mk :: render {
 
   struct SceneNodeProperties {
     friend class SceneNode;
+
   protected:
     size_t ActorId;
     std::string Name;
@@ -31,15 +32,15 @@ namespace mk :: render {
   public:
     size_t GetActorId() const { return this->ActorId; }
 
-    math::mat4 const& GetToWorld() const {
+    math::mat4 const &GetToWorld() const {
       return this->ToWorld;
     }
 
-    math::mat4 const& GetFromWorld() const {
+    math::mat4 const &GetFromWorld() const {
       return this->FromWorld;
     }
 
-    std::string const& GetName() const {
+    std::string const &GetName() const {
       return this->Name;
     }
 
@@ -47,11 +48,11 @@ namespace mk :: render {
       return this->Pass;
     }
 
-    float const& GetRadius() const {
+    float const &GetRadius() const {
       return this->Radius;
     }
 
-    Material const& GetMaterial() const {
+    Material const &GetMaterial() const {
       return this->_Material;
     }
   };

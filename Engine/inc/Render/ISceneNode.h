@@ -14,12 +14,12 @@ namespace mk::render {
     using SceneRef = Scene const&;
     using SelfPtr = shared_ptr<ISceneNode>;
   public:
-    virtual ~ISceneNode() {}
+    virtual ~ISceneNode() {};
 
     virtual SceneNodePropertiesPtr const &Get() const = 0;
 
     // 对该SceneNode进行变换，toWorld为世界空间变换，fromWorld为对象空间变换
-    virtual void SetTransform(math::mat4 const& toWorld, std::optional<math::mat4> fromWorld = std::nullopt) = 0;
+    virtual void SetTransform(math::mat4 const& toWorld, math::mat4 const *fromWord = nullptr) = 0;
 
     virtual void Transform(math::mat4 *toWorld, math::mat4 *fromWorld) const = 0;
 

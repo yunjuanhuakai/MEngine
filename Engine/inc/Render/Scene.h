@@ -22,7 +22,7 @@ namespace mk::render {
   protected:
     friend class ISceneNode;
 
-    using SceneActorMap = std::map<size_t, shared_ptr<ISceneNode>>;
+    using SceneActorMap = std::map<size_t, std::shared_ptr<ISceneNode>>;
 
     unique_ptr<ISceneNode> Root;
     shared_ptr<CameraNode> Camera;

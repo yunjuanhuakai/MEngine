@@ -1,17 +1,21 @@
 ﻿#include "Render/SceneNode.h"
 #include "Render/Scene.h"
+#include "Math/Plane.h"
+#include <variant>
 
 namespace mk::render {
-  SceneNodePropertiesPtr const& SceneNode::Get() const {
+
+  SceneNodePropertiesPtr const &SceneNode::Get() const {
     return this->Props;
   }
 
-  void SceneNode::SetTransform(math::mat4 const& toWorld, std::optional<math::mat4> fromWorld) {
+  void SceneNode::SetTransform(math::mat4 const &toWorld, const glm::mat4 *fromWorld) {
+    auto [a, b, c, d] = math::Plane{};
     this->Props->ToWorld = toWorld;
     if (!fromWorld) {
       this->Props->FromWorld = math::inverse(toWorld);
     } else {
-      this->Props->FromWorld = fromWorld.value();
+      this->Props->FromWorld = *fromWorld;
     }
   }
 
@@ -81,10 +85,11 @@ namespace mk::render {
 
   void SceneNode::Transform(math::mat4 *toWorld, math::mat4 *fromWorld) const {
     *toWorld = this->Get()->ToWorld;
+    *fromWorld = this->Get()->FromWorld;
   }
 
   bool SceneNode::Intall(SceneRef scene) {
-    // TODO 
+    // TODO
     return false;
   }
 

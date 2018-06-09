@@ -13,11 +13,11 @@ namespace mk::render {
     SceneNodePropertiesPtr Props;
   public:
     SceneNode(size_t ActorId,
-      std::string const &Name,
-      RenderPass Pass,
-      Color const& Diffuse,
-      math::mat4 const &ToWorld,
-      std::optional<math::mat4> FromWorld = std::nullopt) {
+              std::string const &Name,
+              RenderPass Pass,
+              Color const &Diffuse,
+              math::mat4 const &ToWorld,
+              math::mat4 const *FromWorld = nullptr) {
       this->Props = std::make_unique<SceneNodeProperties>();
       this->Props->ActorId = ActorId;
       this->Props->Name = Name;
@@ -27,32 +27,32 @@ namespace mk::render {
       this->Props->_Material.SetDiffuse(Diffuse);
     }
 
-    virtual SceneNodePropertiesPtr const& Get() const override;
+    SceneNodePropertiesPtr const &Get() const override;
 
-    virtual void SetTransform(math::mat4 const& toWorld, std::optional<math::mat4> fromWorld = std::nullopt) override;
+    void SetTransform(math::mat4 const &toWorld, math::mat4 const *fromWorld = nullptr) override;
 
-    virtual void OnUpdate(SceneRef scene) override;
+    void OnUpdate(SceneRef scene) override;
 
-    virtual void OnRestore(SceneRef scene) override;
+    void OnRestore(SceneRef scene) override;
 
-    virtual bool PreRender(SceneRef scene) override;
+    bool PreRender(SceneRef scene) override;
 
-    virtual bool IsVisible(SceneRef scene) override;
+    bool IsVisible(SceneRef scene) override;
 
-    virtual void Render(SceneRef scene) override;
+    void Render(SceneRef scene) override;
 
-    virtual void PostRender(SceneRef scene) override;
+    void PostRender(SceneRef scene) override;
 
-    virtual void RenderChildren(SceneRef scene) override;
+    void RenderChildren(SceneRef scene) override;
 
-    virtual bool AddChild(SelfPtr child) override;
+    bool AddChild(SelfPtr child) override;
 
-    virtual bool RemoveChild(size_t ActorId) override;
+    bool RemoveChild(size_t ActorId) override;
 
-    virtual void Transform(math::mat4 *toWorld, math::mat4 *fromWorld) const override;
+    void Transform(math::mat4 *toWorld, math::mat4 *fromWorld) const override;
 
-    virtual bool Intall(SceneRef scene) override;
+    bool Intall(SceneRef scene) override;
 
-    virtual bool Uninstall(SceneRef scene) override;
+    bool Uninstall(SceneRef scene) override;
   };
 }

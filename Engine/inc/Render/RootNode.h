@@ -1,5 +1,6 @@
 #pragma once
 
+#include <ostream>
 #include "Render/SceneNode.h"
 
 namespace mk::render {
@@ -7,7 +8,9 @@ namespace mk::render {
   public:
     RootNode();
 
-    virtual ~RootNode() override;
+    virtual void Render(Scene const &scene);
+
+    virtual bool PreRender(Scene const &scene);
 
   private:
   };

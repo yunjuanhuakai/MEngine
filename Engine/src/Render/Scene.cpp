@@ -34,7 +34,10 @@ namespace mk::render {
   }
 
   bool Scene::Add(shared_ptr<ISceneNode> node) {
-    return node ? node->Intall(*this) : false;
+    if (!node) return false;
+
+    ActorMap[node->Get()->GetActorId()] = node;
+    return node->Intall(*this);
   }
 
   bool Scene::Remove(size_t ActorId) {
