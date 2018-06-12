@@ -7,16 +7,14 @@
 
 namespace mk::render {
   class ISceneNode;
-  class CameraNode;
-  class SkyNode;
-  class LightNode;
-  class LightManager;
 
-  class MatrixStack {
-  private:
-    std::stack<math::mat4> Stack;
-  public:
-  };
+  class CameraNode;
+
+  class SkyNode;
+
+  class LightNode;
+
+  class LightManager;
 
   class Scene {
   protected:
@@ -24,39 +22,46 @@ namespace mk::render {
 
     using SceneActorMap = std::map<size_t, std::shared_ptr<ISceneNode>>;
 
-    unique_ptr<ISceneNode> Root;
-    shared_ptr<CameraNode> Camera;
+    unique_ptr <ISceneNode> Root;
+    shared_ptr <CameraNode> Camera;
     std::stack<math::mat4> MatrixStack;
     SceneActorMap ActorMap;
-    unique_ptr<LightManager> LightManagerPtr;
-    
+    unique_ptr <LightManager> LightManagerPtr;
+
   public:
     Scene();
 
     virtual ~Scene();
 
     void OnRender();
+
     void OnRestore();
+
     void OnLostDevice();
+
     void OnUpdate();
 
-    bool Add(shared_ptr<ISceneNode> node);
+    bool Add(shared_ptr <ISceneNode> node);
+
     bool Remove(size_t ActorId);
 
-    void PushMatrix(math::mat4 const& m);
+    void PushMatrix(math::mat4 const &m);
+
     void PopMatrix();
 
     std::optional<math::mat4> GetToWorld() const;
 
-    LightManager& GetLightManager();
-    ISceneNode& GetRoot();
+    LightManager &GetLightManager();
 
-    shared_ptr<CameraNode> const GetCamera() const;
-    void SetCamera(shared_ptr<CameraNode> Camera);
+    ISceneNode &GetRoot();
+
+    shared_ptr <CameraNode> const GetCamera() const;
+
+    void SetCamera(shared_ptr <CameraNode> Camera);
 
   private:
 
-    shared_ptr<ISceneNode> FindByActorId(size_t ActorId);
+    shared_ptr <ISceneNode> FindByActorId(size_t ActorId);
   };
 
 }

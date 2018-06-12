@@ -8,11 +8,10 @@ namespace mk::render {
   public:
     RootNode();
 
-    virtual void Render(Scene const &scene);
+    virtual void Render(SceneRef scene);
 
-    virtual bool PreRender(Scene const &scene);
+    virtual bool IsVisible(Scene &scene);
 
-  private:
+    virtual void RenderChildren(Scene &scene);
   };
-
 }

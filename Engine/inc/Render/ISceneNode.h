@@ -11,7 +11,7 @@ namespace mk::render {
 
   class ISceneNode : public enable_shared_from_this<ISceneNode> {
   protected:
-    using SceneRef = Scene const&;
+    using SceneRef = Scene &;
     using SelfPtr = shared_ptr<ISceneNode>;
   public:
     virtual ~ISceneNode() {};

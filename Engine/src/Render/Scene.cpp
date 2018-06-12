@@ -5,10 +5,8 @@
 
 namespace mk::render {
 
-  Scene::Scene() 
-    : Root(new RootNode)
-    // , LightManagerPtr(new LightManager)
-  {}
+  Scene::Scene()
+      : Root(new RootNode), LightManagerPtr(new LightManager) {}
 
   Scene::~Scene() {}
 
@@ -45,7 +43,11 @@ namespace mk::render {
     return node ? node->Uninstall(*this) : false;
   }
 
-  void Scene::PushMatrix(math::mat4 const & m) {}
+  void Scene::PushMatrix(math::mat4 const &m) {
+    decltype(auto) curMat = MatrixStack.top();
+    MatrixStack.push(m * curMat);
+    // TODO uniformMatrix
+  }
 
   shared_ptr<ISceneNode> Scene::FindByActorId(size_t ActorId) {
     auto iter = this->ActorMap.find(ActorId);
@@ -55,4 +57,8 @@ namespace mk::render {
     return nullptr;
   }
 
+  void Scene::PopMatrix() {
+    MatrixStack.pop();
+    // TODO uniformMatrix
+  }
 }

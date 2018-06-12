@@ -32,8 +32,8 @@ namespace mk::render {
   }
 
   bool SceneNode::PreRender(SceneRef scene) {
-    // TODO scene.PushAndSetMatrix(this->Props->ToWorld);
-    return false;
+    scene.PushMatrix(Get()->ToWorld);
+    return true;
   }
 
   // 包围球的可见性即是否在摄像机的视锥之内
@@ -52,6 +52,7 @@ namespace mk::render {
   void SceneNode::Render(SceneRef scene) {}
 
   void SceneNode::PostRender(SceneRef scene) {
+    scene.PushMatrix(Get()->ToWorld);
   }
 
   void SceneNode::RenderChildren(SceneRef scene) {
@@ -59,7 +60,7 @@ namespace mk::render {
       // TODO 也许需要校验初始化渲染的返回值？
       node->PreRender(scene);
       if (node->IsVisible(scene)) {
-        // 这里GCC说需要一个特殊的透明渲染通道，暂时不理解意义，先不给
+        // TODO 需要一个渲染通道，但我不认为应该在这里实现与渲染顺序相关的内容，到时候再说
         node->Render(scene);
         node->RenderChildren(scene);
       }
