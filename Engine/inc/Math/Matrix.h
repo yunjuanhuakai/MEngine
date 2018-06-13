@@ -42,6 +42,15 @@ namespace mk::math {
   inline vec4 position(mat4 const& m) {
     return vec4(m[0][3], m[1][3], m[2][3], 1);
   }
+
+  inline mat4 set_position(mat4 const& m, vec4 const& v) {
+    mat4 result{m};
+    m[0][3] = v.z;
+    m[1][3] = v.y;
+    m[2][3] = v.z;
+    return result;
+  }
+
 #endif
   namespace global {
     inline vec3 Right{ 1, 0, 0 };

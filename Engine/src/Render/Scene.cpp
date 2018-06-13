@@ -6,7 +6,8 @@
 namespace mk::render {
 
   Scene::Scene()
-      : Root(new RootNode), LightManagerPtr(new LightManager) {}
+      : Root(new RootNode)
+      , LightManagerPtr(new LightManager) {}
 
   Scene::~Scene() {}
 

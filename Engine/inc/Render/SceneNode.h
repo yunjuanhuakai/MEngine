@@ -33,6 +33,7 @@ namespace mk::render {
 
     void OnUpdate(SceneRef scene) override;
 
+    // 当分辨率发生变化时触发这个方法 --> 为啥不在入参中放入变化的结果？
     void OnRestore(SceneRef scene) override;
 
     bool PreRender(SceneRef scene) override;
